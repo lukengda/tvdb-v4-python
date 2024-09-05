@@ -49,9 +49,9 @@ for c in movie["characters"]:
     print(c)
 
 # fetching a person record
-person = tvdb.get_person_extended(characters[0]["peopleId"])
+person = tvdb.get_person_extended(movie["characters"][0]["peopleId"])
 print(person)
 
-# using since If-Modifed-Since parameter
+# using since If-Modified-Since parameter
 series = tvdb.get_series_extended(393199, if_modified_since="Wed, 30 Jun 2022 07:28:00 GMT")
 ```
