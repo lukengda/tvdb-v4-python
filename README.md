@@ -1,12 +1,16 @@
 # tvdb-v4-python
+
 This is the official tvdb api v4 python package
 
-### Installation 
+## Installation
+
 ```bash
 python3 -m pip install tvdb_v4_official
 ```
-### Getting Started
-some projects require a user supplied pin as well as an apikey
+
+## Getting Started
+
+> Note: some projects require a user supplied pin as well as an apikey
 
 ```python3
 import tvdb_v4_official
@@ -27,8 +31,8 @@ series = tvdb.get_series(121361)
 series = tvdb.get_series_extended(121361)
 for season in sorted(series["seasons"], key=lambda x: (x["type"]["name"], x["number"])):
     if season["type"]["name"] == "Aired Order" and season["number"] == 1:
-	    season = tvdb.get_season_extended(season["id"])
-	    break
+        season = tvdb.get_season_extended(season["id"])
+        break
 else:
     season = None
 if season is not None:
